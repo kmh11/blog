@@ -7,7 +7,7 @@ title: Repl.it XSS
 
 I recently found a rather interesting, non-traditional XSS vulnerability in [repl.it](https://repl.it). I was inspired to try this after reading a [writeup](https://github.com/koczkatamas/gctf19/tree/master/pastetastic) for Pastetastic from Google CTF 2019, which showed off some really cool cross-origin stuff with iframes.
 
-In case you're not familiar with repl.it, it's basically an online IDE with tons of features, including website hosting. Each program you make runs in its own environment called a "repl" (it's a lot more than just a read-eval-print loop)
+In case you're not familiar with repl.it, it's basically an online IDE with tons of features, including website hosting. Each program you make runs in its own environment called a "repl" (it's a lot more than just a read-eval-print loop).
 
 While messing around with how different features worked, I discovered that repls for static sites (HTML, CSS, JS) were previewed in a few nested iframes. Specifically, the site preview consisted of an iframe of [https://replbox.repl.it/public/secure/](https://replbox.repl.it/public/secure/), which contained a blank iframe manipulated by its parent, which was modified to contain an iframe pointing to the URL where the static files are hosted:
 
@@ -39,7 +39,8 @@ window.addEventListener("message", function(event) {
   if (req.secret) {
     if (secret || "handshake" !== req.type) {
       if (req.secret !== secret) return;
-      if (!listeners[req.type]) throw Error("No listeners for event:" + req.type);
+      if (!listeners[req.type])
+      	throw Error("No listeners for event:" + req.type);
       listeners[req.type](req.data);
     } else secret = req.secret;
   }
