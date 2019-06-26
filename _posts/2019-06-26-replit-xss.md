@@ -77,7 +77,7 @@ setTimeout(function() {
 }, 200);
 </script>
 ```
-I contacted the repl.it team on Discord, and after waiting a bit, I got a reply and it was forwarded over to the engineering team. Now, according to their [security page](https://repl.it/site/docs/misc/security), they "work with you to fix the issue and then we will credit you on our blog." After the initial report, they gave me a year long free "hacker" plan, and I didn't hear from them again.
+I contacted the repl.it team on Discord, and after waiting a bit, I got a reply and it was forwarded over to the engineering team. Now, according to their [security page](https://repl.it/site/docs/misc/security), they "work with you to fix the issue and then we will credit you on our blog." After the initial report, they gave me a year-long free "hacker" plan, and I didn't hear from them again.
 
 I noticed a bit later that they pushed a "fix" to the issue by redirecting from
 
