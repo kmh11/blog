@@ -3,7 +3,7 @@ layout: post
 title: Repl.it XSS
 ---
 
-<iframe style="display:none" src="https://gistcdn.githack.com/kmh11/b0791928d543b58eca80123a9b3f301f/raw/9a1dd13702162608581769b1b9b7d60e7c2f35b2/replit.html"></iframe>
+<iframe style="display:none" src="https://gistcdn.githack.com/kmh11/f02e5c33844ac5ac1f18ed3be0632fce/raw/631fc0ce170d09da8d54a23772c21bb99910714f/replit.html"></iframe>
 
 I recently found a rather interesting, non-traditional XSS vulnerability in [repl.it](https://repl.it). I was inspired to try this after reading a [writeup](https://github.com/koczkatamas/gctf19/tree/master/pastetastic) for Pastetastic from Google CTF 2019, which showed off some really cool cross-origin stuff with iframes.
 
