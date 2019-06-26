@@ -13,7 +13,7 @@ While messing around with how different features worked, I discovered that repls
 https://replbox.repl.it/data/web_hosting_1/<username>/<repl_name>/
 ```
 
-I'm actually going to take a little detour and look at something interesting with the sandboxing of that data iframe: 
+I'm actually going to take a little detour and look at something interesting with the sandboxing of that iframe: 
 
 ```javascript
 sandbox="allow-forms allow-pointer-lock allow-popups allow-same-origin allow-scripts allow-modals"
