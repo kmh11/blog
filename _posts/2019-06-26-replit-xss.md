@@ -89,6 +89,6 @@ https://replbox.repl.it/public/secure/
 
 However, in my toolkit of random things that sometimes work, I had a trick that was the intended solution for a problem I wrote for [ångstromCTF 2019](https://kmh.zone/blog/2019/04/24/angstromctf-2019.html#dom-validator): there are often inconsistensies in how having multiple slashes in a URL is handled. Some web servers collapse them, some don't.
 
-In this case, it seems like however they are matching the redirect does not collapse multiple slashes, but the reverse proxy to the API does. This means that you can go to [https://repl.it/public//secure/](https://repl.it/public//secure/) and still get full code execution on the `repl.it` domain. Since they never contacted me to verify whether it was fixed, I had no way or reason to let them know. Oh well.
+In this case, it seems like however they are matching the redirect does not collapse multiple slashes, but the way they are serving the files does. This means that you can go to [https://repl.it/public//secure/](https://repl.it/public//secure/) and still get full code execution on the `repl.it` domain. Since they never contacted me to verify whether it was fixed, I had no way or reason to let them know. Oh well.
 
 PS: If you're currently logged in to repl.it, check out your [repls](https://repl.it/repls) ;)
