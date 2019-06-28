@@ -91,4 +91,6 @@ However, in my toolkit of random things that sometimes work, I had a trick that 
 
 In this case, it seems like however they are matching the redirect does not collapse multiple slashes, but the way they are serving the files does. This means that you can go to [https://repl.it/public//secure/](https://repl.it/public//secure/) and still get full code execution on the `repl.it` domain. Since they never contacted me to verify whether it was fixed, I had no way or reason to let them know. Oh well.
 
-PS: If you're currently logged in to repl.it, check out your [repls](https://repl.it/repls) ;)
+~~PS: If you're currently logged in to repl.it, check out your [repls](https://repl.it/repls) ;)~~
+
+Update: repl.it has fixed the redirect bypass, as well as a couple other XSS and CSRF issues I reported. 
