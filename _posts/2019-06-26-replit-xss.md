@@ -93,4 +93,4 @@ In this case, it seems like however they are matching the redirect does not coll
 
 ~~PS: If you're currently logged in to repl.it, check out your [repls](https://repl.it/repls) ;)~~
 
-_Update: repl.it has fixed the redirect bypass, and is working on a couple other XSS and CSRF issues I reported._
+_Update: repl.it has fixed the redirect bypass and is working on a couple other XSS and CSRF issues I reported._
