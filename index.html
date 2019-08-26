@@ -14,7 +14,10 @@ title: Home
 
     <span class="post-date">{{ post.date | date_to_string }}</span>
 
-    {{ post.content }}
+    {{ post.excerpt }}
+
+    {% if post.no_more != true %}<p class="post-continue"><a href="{{ post.url | relative_url }}"><strong>Continue Reading »</strong></a></p>{% endif %}
+    <hr class="post-hr">
   </div>
   {% endfor %}
 </div>

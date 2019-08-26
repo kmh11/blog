@@ -2,9 +2,6 @@ title:            blog
 description:      "kmh's writings, mostly about cybersecurity"
 url:              https://kmh.zone
 baseurl:          /blog
-
-author:
-  name:           'Mark Otto'
-  url:            https://twitter.com/mdo
+excerpt_separator: <!--more-->
 
 paginate:         5
