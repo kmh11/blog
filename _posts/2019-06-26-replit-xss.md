@@ -49,7 +49,7 @@ window.addEventListener("message", function(event) {
 })
 ```
 
-There's a pretty glaring issue here &mdash; the message handler doesn't check the origin. This means we can stick this in an iframe in our own site and send any messages we want, including `evaljs` (which, per it's name, evaluates JavaScript).
+There's a pretty glaring issue here &mdash; the message handler doesn't check the origin. This means we can stick this in an iframe in our own site and send any messages we want, including `evaljs` (which, per its name, evaluates JavaScript).
 
 So this gives us full code execution on `replbox.repl.it`. The thing is that this is kind of useless; there is a session cookie on that domain, but I couldn't see anything it authenticated for. I messed around for a while trying to find stuff like a path I could host a service worker on, but all the user controlled content was under directories based on username and repl name.
 
