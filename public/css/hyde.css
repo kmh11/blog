@@ -248,3 +248,24 @@ a.sidebar-nav-item:focus {
 .theme-base-0f .related-posts li a:hover {
   color: #8f5536;
 }
+
+.theme-base-kmh .sidebar {
+  background-color: #b2b571;
+}
+
+.theme-base-kmh .sidebar-about img {
+  margin: auto;
+  margin-bottom: 1rem;
+  display: inline !important;
+  box-shadow: 0px 0px 0px 5px rgba(255, 255, 255, 0.8);
+  border-radius: 0.5em;
+}
+
+.theme-base-kmh .content a,
+.theme-base-kmh .related-posts li a:hover {
+  color: #b2b571;
+}
+
+.theme-base-kmh {
+  background-color: #fefefe;
+}
